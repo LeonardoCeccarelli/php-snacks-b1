@@ -7,7 +7,7 @@ sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Acc
 <?php
 
 // Controllo parola name
-if (array_search("name", $_GET)) {
+if (array_key_exists("name", $_GET)) {
     $userName = $_GET["name"];
     // Controllo lunghezza stringa
     if (trim(strlen($userName < 3))) {
@@ -18,7 +18,7 @@ if (array_search("name", $_GET)) {
 }
 
 // Controllo parola mail
-if (array_search("mail", $_GET)) {
+if (array_key_exists("mail", $_GET)) {
     $userMail = $_GET["mail"];
     // Controllo sulla stringa che contenga determinati caratteri
     if (!strchr($userMail, "@") && !strchr($userMail, "@")) {
@@ -29,7 +29,7 @@ if (array_search("mail", $_GET)) {
 }
 
 // Controllo parola age
-if (array_search("age", $_GET)) {
+if (array_key_exists("age", $_GET)) {
     $userAge = $_GET["age"];
     // Controllo se è un numero
     if (!is_numeric($userAge)) {
@@ -38,10 +38,6 @@ if (array_search("age", $_GET)) {
 } else {
     $userAge = false;
 }
-
-echo $userName;
-echo $userMail;
-echo $userAge;
 
 // Stampo l'accesso
 // Se i controlli vengono superato è consentito
