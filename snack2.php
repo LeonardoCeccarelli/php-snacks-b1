@@ -6,6 +6,7 @@ Qui l’array di esempio: https://www.codepile.net/pile/R2K5d68z -->
 
 <?php
 
+// Creo array dei post totali
 $arrPost = [
 
     "10/10/2021" => [
@@ -63,8 +64,12 @@ $arrPost = [
     ],
 ];
 
+// Recupero le chiavi dell'array precedente
+// (che sono le singole date della pubblicazione dei post)
 $arrKeysPost = array_keys($arrPost);
 
+// Ciclo sull'array delle chiavi e stampo il contenuto 
+// rispettivo alla chiave dell'arrai pcincipale
 for ($i = 0; $i < count($arrKeysPost); $i++) {
     $singleDate = $arrKeysPost[$i];
 
